@@ -1,0 +1,71 @@
+@use "mixins" as *;
+
+.winners-list {
+  display: flex;
+  gap: var(--spacing-sm);
+  overflow-x: auto;
+  cursor: grab;
+  user-select: none;
+  @include scrollbar-hidden;
+  margin-bottom: var(--spacing-md);
+
+  @include mobile {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    margin-left: calc(-1 * var(--spacing-md));
+    margin-right: calc(-1 * var(--spacing-md));
+  }
+}
+
+.winner-card {
+  flex-shrink: 0;
+  width: var(--winner-card-width);
+  background-color: var(--color-bg-card);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+
+  &__image {
+    width: 68px;
+    height: 48px;
+    border-radius: var(--border-radius-xs);
+    object-fit: cover;
+    background-color: var(--color-bg-card);
+  }
+
+  &__info {
+    width: calc(100% - 68px);
+  }
+}
+
+.winner-card-info {
+  &__name {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-accent);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__cost {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-positive);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__username {
+    display: block;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,45 @@
+@use "mixins" as *;
+
+:root {
+  // Colors
+  --color-bg-primary: hsl(227, 48%, 11%);
+  --color-bg-secondary: hsl(224, 48%, 16%);
+  --color-bg-card: hsl(227, 28%, 23%);
+  --color-bg-overlay: hsla(0, 0%, 0%, 0.8);
+  --color-accent: hsl(22, 85%, 50%);
+  --color-accent-hover: hsl(22, 85%, 40%);
+  --color-text-primary: hsl(0, 0%, 100%);
+  --color-text-secondary: hsl(227, 14%, 61%);
+  --color-text-tertiary: hsl(229, 6%, 65%);
+  --color-positive: hsl(109, 79%, 32%);
+
+  // Container width
+  --container-width: 1440px;
+
+  // Sizes
+  --card-width: 272px;
+  --card-width-modal: 245px;
+  --card-height: 188px;
+  --winner-card-width: 168px;
+  --winner-card-height: 64px;
+  --border-radius: 25px;
+  --border-radius-sm: 16px;
+  --border-radius-md: 12px;
+  --border-radius-xs: 8px;
+
+  @include mobile {
+    --card-width: 160px;
+    --card-height: 106px;
+    --card-width-modal: 167px;
+  }
+
+  // Spacing
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  // Breakpoints (for reference, SCSS uses mixins)
+  --breakpoint-mobile: 768px;
+}

@@ -1,0 +1,116 @@
+@use "mixins" as *;
+
+.game-section {
+  padding: 16px var(--spacing-lg);
+
+  @include mobile {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--border-radius-xs);
+    background-color: var(--color-bg-card);
+    cursor: pointer;
+    transition: all 0.2s;
+
+    @include mobile {
+      display: none;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-accent);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    svg {
+      width: 5px;
+      height: 8px;
+    }
+  }
+
+  &__show-all {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-card);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-xs);
+    min-height: 24px;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+  }
+
+  &__tab {
+    min-width: 112px;
+    min-height: 40px;
+    padding: var(--spacing-sm);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-md);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    transition: all 0.2s;
+
+    &--active {
+      border-color: var(--color-accent);
+      cursor: default;
+    }
+
+    &:hover:not(&--active) {
+      color: var(--color-accent);
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: var(--spacing-sm);
+    overflow: hidden;
+    @include scrollbar-hidden;
+    margin-bottom: var(--spacing-md);
+
+    @include mobile {
+      overflow-x: auto;
+      padding-left: var(--spacing-md);
+      padding-right: var(--spacing-md);
+      margin-left: calc(-1 * var(--spacing-md));
+      margin-right: calc(-1 * var(--spacing-md));
+    }
+  }
+}

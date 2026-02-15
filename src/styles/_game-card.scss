@@ -1,0 +1,128 @@
+@use "mixins" as *;
+$card: ".game-card";
+
+.game-card {
+  flex-shrink: 0;
+  width: var(--card-width);
+
+  &__header {
+    position: relative;
+    height: var(--card-height);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+}
+
+.game-card-header {
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+    opacity: 0;
+    transition: opacity 0.2s;
+    padding-bottom: var(--spacing-sm);
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 66px;
+      background-image: linear-gradient(
+        to top,
+        hsla(0, 0%, 0%, 0.9) 0%,
+        hsla(0, 0%, 0%, 0.6) 55%,
+        hsla(0, 0%, 0%, 0) 100%
+      );
+    }
+
+    #{$card}:hover & {
+      opacity: 1;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius-sm);
+    font-weight: 700;
+    font-size: 16px;
+    min-width: 126px;
+    min-height: 56px;
+    text-align: center;
+    background-color: var(--color-accent);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+    }
+
+    @include mobile {
+      min-width: 100px;
+      min-height: 40px;
+      font-size: 14px;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      margin-bottom: var(--spacing-xs);
+    }
+  }
+
+  &__btn-inline {
+    position: relative;
+    padding: var(--spacing-sm) var(--spacing-xs);
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    color: var(--color-text-primary);
+    padding: var(--spacing-sm) var(--spacing-xs);
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    @include mobile {
+      font-size: 12px;
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+  }
+}
+
+.game-card-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+  }
+}

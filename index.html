@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="container container--flex">
+          <a href="#" class="header__logo">Logo</a>
+          <button
+            class="header__search-btn"
+            id="search-btn"
+            aria-label="Search"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 21 24"
+              fill="none"
+            >
+              <path
+                d="M9.978 19.576c1.888 0 3.655-.515 5.161-1.41l3.568 4.667a1.29 1.29 0 0 0 1.783.25 1.234 1.234 0 0 0 .255-1.75l-3.612-4.723a9.662 9.662 0 0 0 2.822-6.822C19.955 4.382 15.488 0 9.978 0 4.468 0 0 4.382 0 9.788c0 5.406 4.467 9.788 9.978 9.788Zm7.43-9.788c0 4.026-3.327 7.289-7.43 7.289-4.104 0-7.43-3.263-7.43-7.289 0-4.025 3.326-7.289 7.43-7.289 4.103 0 7.43 3.264 7.43 7.29Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Banner -->
+      <section class="promo">
+        <div class="container">
+          <a href="#" target="_blank">
+            <picture class="promo__picture">
+              <source
+                srcset="/images/promo-phone.jpg"
+                media="(max-width: 567px)"
+              />
+              <img src="/images/promo.jpg" alt="Promo" class="promo__image" />
+            </picture>
+          </a>
+        </div>
+      </section>
+
+      <section class="game-section">
+        <div class="container">
+          <div class="winners-list" id="winners-list"></div>
+          <div id="game-sections"></div>
+        </div>
+      </section>
+
+      <!-- Search Modal -->
+      <div class="modal modal--hidden" id="modal">
+        <div class="modal__content modal-content">
+          <button class="modal-content__close" id="search-close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 14 14"
+              fill="none"
+              class="modal-content__close-icon"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M13.69.321a1.057 1.057 0 0 0-1.498 0L7 5.503 1.808.31A1.057 1.057 0 1 0 .31 1.808L5.503 7 .31 12.192a1.057 1.057 0 1 0 1.497 1.497L7 8.497l5.192 5.192a1.057 1.057 0 1 0 1.497-1.497L8.497 7l5.192-5.192a1.064 1.064 0 0 0 0-1.487Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <div class="modal-content-header">
+            <h3 class="modal-content-header__title">Search</h3>
+          </div>
+          <div class="modal-content-body">
+            <h4 class="modal-content-body__title">
+              Enter the game titel in the search below
+            </h4>
+            <div class="modal-content-body-search modal-content-body__search">
+              <label
+                for="search-input"
+                class="modal-content-body-search__label"
+              >
+                helper label
+              </label>
+              <div class="modal-content-body-search__row">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                  class="modal-content-body-search__icon"
+                >
+                  <path
+                    d="m19.775 18.688-4.81-4.809a8.463 8.463 0 1 0-1.086 1.087l4.809 4.809a.77.77 0 0 0 1.087-1.087ZM1.558 8.473a6.916 6.916 0 1 1 6.916 6.915 6.923 6.923 0 0 1-6.916-6.915Z"
+                  />
+                </svg>
+                <input
+                  type="text"
+                  id="search-input"
+                  placeholder="Search"
+                  class="modal-content-body-search__input"
+                  autocomplete="off"
+                />
+                <button
+                  class="modal-content-body-search__clear"
+                  id="search-clear"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    class="modal-content-body-search__clear-icon"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M13.69.321a1.057 1.057 0 0 0-1.498 0L7 5.503 1.808.31A1.057 1.057 0 1 0 .31 1.808L5.503 7 .31 12.192a1.057 1.057 0 1 0 1.497 1.497L7 8.497l5.192 5.192a1.057 1.057 0 1 0 1.497-1.497L8.497 7l5.192-5.192a1.064 1.064 0 0 0 0-1.487Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <h5 class="modal-content-body__subtitle">Top games</h5>
+            <div class="modal-content-body-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

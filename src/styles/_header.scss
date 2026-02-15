@@ -1,0 +1,35 @@
+@use "mixins" as *;
+
+.header {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-bg-primary);
+
+  @include mobile {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  &__logo {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 2px 16px;
+  }
+
+  &__search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+
+    svg {
+      width: 21px;
+      height: 24px;
+      fill: var(--color-text-primary);
+    }
+    &:hover {
+      background-color: var(--color-bg-card);
+    }
+  }
+}

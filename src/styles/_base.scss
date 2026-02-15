@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+
+  &--flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
