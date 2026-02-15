@@ -1,12 +1,8 @@
 @use "mixins" as *;
 
 .game-section {
-  padding: 16px var(--spacing-lg);
-
-  @include mobile {
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
-  }
+  padding-top: var(--spacing-md);
+  padding-bottom: 16px;
 
   &__header {
     display: flex;
